@@ -1,7 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Navigation from '../components/Navigation';
 
-export default function About() {
+
+const About = () => {
   return (
-    <div>À propos</div>
-  )
-}
+    <div>
+      <Navigation/>
+      <h1> À propos </h1>
+      <section>Fiabilité</section>
+      <p></p>
+      <section>Respect</section>
+      <p></p>
+      <section>Service</section>
+      <p></p>
+      <section>Sécutité</section>
+      <p></p>
+    </div>
+  );
+};
+
+export default About;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Banner from './Banner';
-import Card from './Card';
+import Banner from '../components/Banner';
+import Card from '../components/Card';
+import Navigation from '../components/Navigation';
 
 const Home = () => {
   const [annonces, setAnnonces] = useState([]);
@@ -18,6 +19,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Navigation/>
       <Banner />
       <div className="card-container">
         {annonces.map((item) => (
