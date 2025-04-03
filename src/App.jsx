@@ -6,6 +6,7 @@ import Error from "./pages/Error"
 import Gallery from "./pages/Gallery"
 
 
+
 function App () {
   return (
     <BrowserRouter>

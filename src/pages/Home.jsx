@@ -10,6 +10,7 @@ const Home = () => {
     fetch('/script.json')
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setAnnonces(data);
       })
       .catch((error) => {
@@ -22,14 +23,21 @@ const Home = () => {
       <Navigation/>
       <Banner />
       <div className="card-container">
-        {annonces.map((item) => (
+        {annonces.map((item) => {
+          return (
           <Card
             key={item.id}
             title={item.title}
+            cover={item.cover}
+            pictures={item.pictures}
             description={item.description}
-            imageUrl={item.imageUrl}
+            host={item.host}
+            rating={item.rating} 
+            location={item.location} 
+            equipments={item.equipments} 
+            tags={item.tags}
           />
-        ))}
+        )})}
       </div>
     </div>
   );
