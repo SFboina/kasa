@@ -22,22 +22,10 @@ const Home = () => {
     <div className="home">
       <Navigation/>
       <Banner />
-      <div className="card-container">
-        {annonces.map((item) => {
-          return (
-          <Card
-            key={item.id}
-            title={item.title}
-            cover={item.cover}
-            pictures={item.pictures}
-            description={item.description}
-            host={item.host}
-            rating={item.rating} 
-            location={item.location} 
-            equipments={item.equipments} 
-            tags={item.tags}
-          />
-        )})}
+      <div className="image-grid">
+        {annonces.map((logement) => (
+          <img key={logement.id} src={logement.cover} alt={logement.title} className="image-cover"/>
+        ))}
       </div>
     </div>
   );

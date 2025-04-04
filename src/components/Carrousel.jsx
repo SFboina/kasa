@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import Collapse from "../components/Collapse"
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
