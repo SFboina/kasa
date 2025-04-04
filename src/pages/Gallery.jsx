@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carrousel from "../components/Carrousel";
 
-const images = [
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
-  
-];
+const Gallery = () => {
+  const [logements, setLogements] = useState([]);
 
-function Gallery() {
+  useEffect(() => {
+    fetch("/script.json")
+      .then((response) => response.json())
+      .then((data) => setLogements(data))
+      .catch((error) => console.error("Erreur lors du chargement :", error));
+  }, []);
+
   return (
-    <div>
-      <h1>Galerie d'Images</h1>
-      <Carrousel images={images} />
+    <div className="gallery">
+      <h1>Galerie des logements</h1>
+
+      {/* Affichage des logements avec leurs infos et le carrousel */}
+      {logements.map((item) => (
+        <Carrousel
+          key={item.id}
+          images={item.pictures}
+          title={item.title}
+          host={item.host}
+          rating={item.rating}
+          location={item.location}
+          equipments={item.equipments}
+          tags={item.tags}
+          description={item.description}
+        />
+      ))}
     </div>
   );
-}
+};
 
 export default Gallery;
