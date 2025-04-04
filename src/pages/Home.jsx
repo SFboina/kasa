@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
-import Card from '../components/Card';
+import Carrousel from '../components/Carrousel';
 import Navigation from '../components/Navigation';
 
 const Home = () => {
