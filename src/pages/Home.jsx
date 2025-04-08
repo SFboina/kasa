@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import Carrousel from '../components/Carrousel';
 import Navigation from '../components/Navigation';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [annonces, setAnnonces] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/script.json')
@@ -24,7 +26,7 @@ const Home = () => {
       <Banner />
       <div className="image-grid">
         {annonces.map((logement) => (
-          <img key={logement.id} src={logement.cover} alt={logement.title} className="image-cover"/>
+          <img key={logement.id} src={logement.cover} alt={logement.title} className="image-cover" onClick={() => navigate(`/gallery/${logement.id}`)}/>
         ))}
       </div>
     </div>
