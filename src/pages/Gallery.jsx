@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import Carrousel from "../components/Carrousel";
+import Card from "../components/Card"
 
 const Gallery = () => {
   const { id } = useParams(); // Récupère l’ID du logement depuis l'URL
@@ -35,6 +36,7 @@ const Gallery = () => {
         tags={logement.tags}
         description={logement.description}
       />
+       <Card title={logement.title} cover={logement.cover} />
     </div>
   );
 };
