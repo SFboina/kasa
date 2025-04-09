@@ -13,7 +13,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-        setAnnonces(data);
+        setAnnonces(data.slice(0, 6));// Garde uniquement les 6 premières annonces
       })
       .catch((error) => {
         console.error('Erreur lors du chargement des données :', error);
@@ -26,7 +26,13 @@ const Home = () => {
       <Banner />
       <div className="image-grid">
         {annonces.map((logement) => (
-          <img key={logement.id} src={logement.cover} alt={logement.title} className="image-cover" onClick={() => navigate(`/gallery/${logement.id}`)}/>
+          <img 
+          key={logement.id} 
+          src={logement.cover} 
+          alt={logement.title} 
+          className="image-cover" 
+          onClick={() => navigate(`/gallery/${logement.id}`)}
+          />
         ))}
       </div>
     </div>
