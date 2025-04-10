@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import Carrousel from "../components/Carrousel";
 import Card from "../components/Card"
+import Navigation from "../components/Navigation";
 
 const Gallery = () => {
   const { id } = useParams(); // Récupère l’ID du logement depuis l'URL
@@ -25,8 +26,9 @@ const Gallery = () => {
     <div className="gallery">
      
 
+      <Navigation />
       {/* Affichage unique de l'image cliquée et ses infos */}
-      <Carrousel
+      <Carrousel 
         images={logement.pictures}
         title={logement.title}
         host={logement.host}
