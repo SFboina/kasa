@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
-import Carrousel from '../components/Carrousel';
+import Card from '../components/Card';
 import Navigation from '../components/Navigation';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,13 +26,7 @@ const Home = () => {
       <Banner />
       <div className="image-grid">
         {annonces.map((logement) => (
-          <img 
-          key={logement.id} 
-          src={logement.cover} 
-          alt={logement.title} 
-          className="image-cover" 
-          onClick={() => navigate(`/gallery/${logement.id}`)}
-          />
+          <Card logement={logement} key={logement}/>
         ))}
       </div>
     </div>

@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Error from "./pages/Error"
 import Gallery from "./pages/Gallery"
+import Footer from "./components/Footer"
 
 
 
@@ -17,6 +18,7 @@ function App () {
         <Route path="*" element={<Error />} />
         <Route path="/gallery/:id" element={<Gallery />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

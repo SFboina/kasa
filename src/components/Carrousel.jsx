@@ -17,7 +17,14 @@ const Carrousel = ({ images, title, host, rating, location, equipments, tags, de
 
   return (
     <div className="carousel">
+      <div className="carousel-container">
+      <button className="prev" onClick={prevSlide}>❮</button>
       <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      <button className="next" onClick={nextSlide}>❯</button>
+      
+  {/* Ajout du compteur directement sur l'image */}
+    <div className="counter">{currentIndex + 1} / {totalImages}</div>
+    </div>
 
       {/* Infos du logement */}
       <div className="carousel-info">
@@ -40,7 +47,7 @@ const Carrousel = ({ images, title, host, rating, location, equipments, tags, de
         {/* Tags */}
         <div className="carousel-tags">
           {tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
+            <span key={`${tag}-${index}`} className="tag">{tag}</span>
           ))}
         </div>
 
@@ -51,23 +58,12 @@ const Carrousel = ({ images, title, host, rating, location, equipments, tags, de
           content={
             <ul>
               {equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
+                <li key={`${equipment}-${index}`}>{equipment}</li>
               ))}
             </ul>
           } 
         />
       </div>
-
-      {/* Flèches de navigation */}
-      {totalImages > 1 && (
-        <>
-          <button className="prev" onClick={prevSlide}>⬅️</button>
-          <button className="next" onClick={nextSlide}>➡️</button>
-          <div className="counter">
-            {currentIndex + 1} / {totalImages}
-          </div>
-        </>
-      )}
     </div>
   );
 };

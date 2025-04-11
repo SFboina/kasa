@@ -13,7 +13,6 @@ const About = () => {
   return (
     <div>
       <Navigation/>
-      <h1> À propos </h1>
       {sections.map((section, index) => (
         <Collapse key={index} title={section.title} content={section.content} />
       ))}

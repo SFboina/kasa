@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import Carrousel from "../components/Carrousel";
-import Card from "../components/Card"
 import Navigation from "../components/Navigation";
 
 const Gallery = () => {
@@ -38,7 +37,7 @@ const Gallery = () => {
         tags={logement.tags}
         description={logement.description}
       />
-       <Card title={logement.title} cover={logement.cover} />
+
     </div>
   );
 };
