@@ -26,7 +26,7 @@ const Home = () => {
       <Banner />
       <div className="image-grid">
         {annonces.map((logement) => (
-          <Card logement={logement} key={logement}/>
+          <Card logement={logement} key={logement.id}/>
         ))}
       </div>
     </div>
