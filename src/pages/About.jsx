@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Collapse from '../components/Collapse';
+import aboutImage from "../assets/Image source 2.png"
 
 const sections = [
   { title: "Fiabilité", content: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiés par nos équipes. " },
@@ -13,6 +14,9 @@ const About = () => {
   return (
     <div>
       <Navigation/>
+      <div className="about-banner">
+        <img src={aboutImage} showText={false} alt="À propos de Kasa" className="banner-image" />
+      </div>
       {sections.map((section, index) => (
         <Collapse key={index} title={section.title} content={section.content} />
       ))}

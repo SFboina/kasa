@@ -3,6 +3,7 @@ import Banner from '../components/Banner';
 import Card from '../components/Card';
 import Navigation from '../components/Navigation';
 import { useNavigate } from 'react-router-dom';
+import homeImage from "../assets/IMG.png"
 
 const Home = () => {
   const [annonces, setAnnonces] = useState([]);
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <div className="home">
       <Navigation/>
-      <Banner />
+      <Banner image={homeImage} showText={true} />
       <div className="image-grid">
         {annonces.map((logement) => (
           <Card logement={logement} key={logement.id}/>
