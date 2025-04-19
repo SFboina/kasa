@@ -164,6 +164,28 @@ body {
     border-radius: 50%;
   }
 
+  .carousel-rating .svg-icon {
+    width: 24px;
+    height: auto; 
+  }
+
+  .carousel-location,
+  .carousel-tags,
+  .collapse-description {
+  text-align: left;
+}
+
+  .carousel-host,
+  .carousel-rating,
+  .collapse-equipements {
+  text-align: right;
+  color: #ff6060;
+}
+
+  .carousel-title {
+  color: #ff6060;
+}
+
   .toggle-btn {
     width: 80%;
     gap: 20px;

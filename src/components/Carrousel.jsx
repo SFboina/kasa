@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import Collapse from "../components/Collapse"
+import grayStar from "../assets/star-inactive 1.svg"
+import redStar from "../assets/star-active 1.svg"
 
 const Carrousel = ({ images, title, host, rating, location, equipments, tags, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,8 +30,8 @@ const Carrousel = ({ images, title, host, rating, location, equipments, tags, de
 
       {/* Infos du logement */}
       <div className="carousel-info">
-        <h2>{title}</h2>
-        <p className="carousel-location">📍 {location}</p>
+        <h2 className="carousel-title">{title}</h2>
+        <p className="carousel-location"> {location}</p>
         <div className="carousel-host">
           <img src={host.picture} alt={host.name} className="host-picture"/>
           <p>{host.name}</p>
@@ -38,9 +40,12 @@ const Carrousel = ({ images, title, host, rating, location, equipments, tags, de
         {/* Score en étoiles */}
         <div className="carousel-rating">
           {Array.from({ length: 5 }, (_, index) => (
-            <span key={index} className={index < parseInt(rating, 10) ? "star filled" : "star"}>
-              ⭐
-            </span>
+            <img 
+            key={index} 
+            src={index < parseInt(rating) ? redStar : grayStar} 
+            alt="Étoile" 
+            className="svg-icon" 
+          />
           ))}
         </div>
 
