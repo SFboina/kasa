@@ -1,7 +1,9 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Collapse from '../components/Collapse';
+import Banner from "../components/Banner"
 import aboutImage from "../assets/Image source 2.png"
+
 
 const sections = [
   { title: "Fiabilité", content: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiés par nos équipes. " },
@@ -15,11 +17,13 @@ const About = () => {
     <div>
       <Navigation/>
       <div className="about-banner">
-        <img src={aboutImage} showText={false} alt="À propos de Kasa" className="banner-image" />
+      <Banner image={aboutImage} className="banner-image" showText={false} /> 
       </div>
+      <div className='container-collapse'>
       {sections.map((section, index) => (
         <Collapse key={index} title={section.title} content={section.content} />
       ))}
+      </div>
     </div>
   );
 };
