@@ -221,6 +221,11 @@ body {
     color: white;
   }
 
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .container-collapse {
     display: flex;
     flex-direction: column;
@@ -271,3 +276,35 @@ body {
   .footer-logo {
     filter: brightness(0) invert(1);
   }
+
+    @media (max-width: 768px) {
+
+      .container {
+        padding: 10px; /* Réduit les marges sur mobile */
+      }
+
+      .logo {
+        font-size: 1.5rem; /* Réduit la taille sur mobile */
+        display: flex;
+        align-items: center; /* Assure l'alignement des éléments */
+        gap: 5px; 
+      }
+    
+      .house-icon {
+        width: 20px; /* Réduit l'icône sur petits écrans */
+        height: auto;
+      }
+      .image-grid {
+        grid-template-columns: repeat(1, 1fr); /*  Affiche 2 images par ligne sur mobile */
+      }
+
+      .footer-text {
+        white-space: normal;
+        word-wrap: break-word;
+      }
+
+      .footer {
+        padding: 20px;
+      }
+  }
+  

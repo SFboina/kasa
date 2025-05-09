@@ -11,9 +11,9 @@ const Collapse = ({ title, content }) => {
   return (
     <div className="collapse">
       <div className="collapse-header" onClick={toggleCollapse}>
+        <h2>{title}</h2>
         <button className={`toggle-btn ${isOpen ? "open" : ""}`}>
           {isOpen ? "▲" : "▼"}
-          <h2>{title}</h2>
         </button>
       </div>
       {isOpen && <div className="collapse-content">{content}</div>}
