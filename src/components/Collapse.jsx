@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import "../components/Collapse"
+import chevronDown from "../assets/chevron-down.png"
+import chevronUp from "../assets/chevron-up.png"
 
 const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +15,7 @@ const Collapse = ({ title, content }) => {
       <div className="collapse-header" onClick={toggleCollapse}>
         <h2>{title}</h2>
         <button className={`toggle-btn ${isOpen ? "open" : ""}`}>
-          {isOpen ? "▲" : "▼"}
+          {isOpen ? <img src={chevronUp} alt="chevron-up" /> : <img src={chevronDown} alt="chevron-down" />}
         </button>
       </div>
       {isOpen && <div className="collapse-content">{content}</div>}

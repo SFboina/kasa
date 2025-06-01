@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from '../components/Navigation';
 import Collapse from '../components/Collapse';
 import Banner from "../components/Banner"
 import aboutImage from "../assets/Image source 2.png"
@@ -15,10 +14,7 @@ const sections = [
 const About = () => {
   return (
     <div>
-      <Navigation/>
-      <div className="about-banner">
       <Banner image={aboutImage} className="banner-image" showText={false} /> 
-      </div>
       <div className='container-collapse'>
       {sections.map((section, index) => (
         <Collapse key={index} title={section.title} content={section.content} />

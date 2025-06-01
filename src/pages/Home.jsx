@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navigation/>
+      
       <Banner image={homeImage} showText={true} />
       <div className="image-grid">
         {annonces.map((logement) => (

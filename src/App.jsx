@@ -5,19 +5,22 @@ import About from "./pages/About"
 import Error from "./pages/Error"
 import Gallery from "./pages/Gallery"
 import Footer from "./components/Footer"
-
+import Navigation from "./components/Navigation"
 
 
 function App () {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/gallery/:id" element={<Gallery />} />
-      </Routes>
+      <Navigation />
+      <div className="wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="*" element={<Error />} />
+          <Route path="/gallery/:id" element={<Gallery />} />
+        </Routes>
+      </div>
       <Footer />
     </BrowserRouter>
   )
